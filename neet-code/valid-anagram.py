@@ -1,7 +1,24 @@
-class Solution:
-    def is_anagram(self, s: str, t: str) -> bool:
-        first_set = set(s)
-        second_set = set(t)
-        return len(first_set) == len(second_set)
+def is_anagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+    dict1 = {}
+    dict2 = {}
 
-print(Solution().is_anagram("dog", "cat"))
+    for char in s:
+        dict1[char] = dict1.get(char, 0) + 1
+    for char in t:
+        dict2[char] = dict2.get(char, 0) + 1
+    print(dict1)
+    print(dict2)
+
+    for char in s:
+        if dict1[char] != dict2.get(char):
+            return False
+    return  True
+
+
+s = "jar"
+
+t = "jam"
+
+print(is_anagram(s, t))
