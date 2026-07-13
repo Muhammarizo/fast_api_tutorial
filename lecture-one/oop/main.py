@@ -1,8 +1,11 @@
 from enemy import *
+from inheritance.dog import *
 
-enemy = Enemy()
-enemy.type_of_enemy = "Zombie"
 
-enemy.talk()
-enemy.walk_forward()
-enemy.attack()
+zombie = Enemy('Zombie', 10, 1)
+
+
+print(zombie.get_type_of_enemy())
+
+dog = Dog()
+dog.eat()
